@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Prog-mobile-TP3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_inscription">Inscription</string>
+    <string name="title_affichage">Informations</string>
+
+    <string name="label_login">Login</string>
+    <string name="label_password">Password</string>
+    <string name="label_lastname">Lastname</string>
+    <string name="label_firstname">Firstname</string>
+    <string name="label_birthdate">Birthdate</string>
+    <string name="label_phone">Phone</string>
+    <string name="label_email">Email</string>
+    <string name="label_interests">Interests</string>
+
+    <string name="label_submit">Submit</string>
+    <string name="label_return">Return</string>
+
 </resources>
