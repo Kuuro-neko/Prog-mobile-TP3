@@ -10,11 +10,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements InscriptionFragment.OnInscriptionListener {
 
+    private DatabaseHelper databaseHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        databaseHelper = new DatabaseHelper(this);
 
         InscriptionFragment inscriptionFragment = new InscriptionFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, inscriptionFragment).commit();
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements InscriptionFragme
     public void onInscriptionListener(String login, String password, String lastname, String firstname, String birthdate, String phone, String email, String interests) {
         System.out.println("Login: " + login + "\nPassword: " + password + "\nLastname: " + lastname + "\nFirstname: " + firstname + "\nBirthdate: " + birthdate + "\nPhone: " + phone + "\nEmail: " + email + "\nInterests: " + interests);
         // Store data adn then go to the next fragment with the data
+        databaseHelper.insertUser(login, password, lastname, firstname, birthdate, phone, email, interests);
+
         AffichageFragment affichageFragment = new AffichageFragment();
         Bundle bundle = new Bundle();
         bundle.putString("login", login);
