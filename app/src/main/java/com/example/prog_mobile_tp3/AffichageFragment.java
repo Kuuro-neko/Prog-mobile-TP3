@@ -16,6 +16,7 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class AffichageFragment extends Fragment {
+    DatabaseHelper databaseHelper;
     private TextView textViewLogin;
     private TextView textViewPassword;
     private TextView textViewLastname;
@@ -35,6 +36,7 @@ public class AffichageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_affichage, container, false);
+        databaseHelper = new DatabaseHelper(getContext());
 
         textViewLogin = view.findViewById(R.id.login);
         textViewPassword = view.findViewById(R.id.password);
@@ -56,17 +58,20 @@ public class AffichageFragment extends Fragment {
         Bundle bundle = getArguments();
 
         if (bundle != null) {
-            textViewLogin.setText(bundle.getString("login"));
-            textViewPassword.setText(bundle.getString("password"));
-            textViewLastname.setText(bundle.getString("lastname"));
-            textViewFirstname.setText(bundle.getString("firstname"));
-            textViewBirthdate.setText(bundle.getString("birthdate"));
-            textViewPhone.setText(bundle.getString("phone"));
-            textViewEmail.setText(bundle.getString("email"));
-            textViewInterests.setText(bundle.getString("interests"));
+            String login = bundle.getString("login");
+            String password = bundle.getString("password");
+
+            User user = databaseHelper.getUser(login, password);
+
+            textViewLogin.setText(login);
+            textViewPassword.setText(password);
+            textViewLastname.setText(user.getLastname());
+            textViewFirstname.setText(user.getFirstname());
+            textViewBirthdate.setText(user.getBirthdate());
+            textViewPhone.setText(user.getPhone());
+            textViewEmail.setText(user.getEmail());
+            textViewInterests.setText(user.getInterests());
         }
-
-
 
         return view;
     }

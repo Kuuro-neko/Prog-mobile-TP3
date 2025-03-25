@@ -2,6 +2,7 @@ package com.example.prog_mobile_tp3;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -60,5 +61,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_INTERESTS, interests);
         db.insert(TABLE_NAME, null, values);
         db.close();
+    }
+
+
+    User getUser(String login, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_NAME, new String[]{
+                COLUMN_ID, COLUMN_LOGIN, COLUMN_PASSWORD, COLUMN_LASTNAME, COLUMN_FIRSTNAME, COLUMN_BIRTHDATE, COLUMN_PHONE, COLUMN_EMAIL, COLUMN_INTERESTS
+        }, COLUMN_LOGIN + "=? AND " + COLUMN_PASSWORD + "=?", new String[]{login, password}, null, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            User user = new User(
+                    cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_LOGIN)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_LASTNAME)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FIRSTNAME)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BIRTHDATE)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PHONE)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_INTERESTS))
+            );
+            cursor.close();
+            return user;
+        }
+        cursor.close();
+        return null;
     }
 }

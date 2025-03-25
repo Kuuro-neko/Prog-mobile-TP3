@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements InscriptionFragme
 
     @Override
     public void onInscriptionListener(String login, String password, String lastname, String firstname, String birthdate, String phone, String email, String interests) {
-        System.out.println("Login: " + login + "\nPassword: " + password + "\nLastname: " + lastname + "\nFirstname: " + firstname + "\nBirthdate: " + birthdate + "\nPhone: " + phone + "\nEmail: " + email + "\nInterests: " + interests);
+        System.out.println("From mainactivity (about to add this new user) : Login: " + login + "\nPassword: " + password + "\nLastname: " + lastname + "\nFirstname: " + firstname + "\nBirthdate: " + birthdate + "\nPhone: " + phone + "\nEmail: " + email + "\nInterests: " + interests);
         // Store data adn then go to the next fragment with the data
         databaseHelper.insertUser(login, password, lastname, firstname, birthdate, phone, email, interests);
 
@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity implements InscriptionFragme
         Bundle bundle = new Bundle();
         bundle.putString("login", login);
         bundle.putString("password", password);
-        bundle.putString("lastname", lastname);
-        bundle.putString("firstname", firstname);
-        bundle.putString("birthdate", birthdate);
-        bundle.putString("phone", phone);
-        bundle.putString("email", email);
-        bundle.putString("interests", interests);
+        //bundle.putString("lastname", lastname);
+        //bundle.putString("firstname", firstname);
+        //bundle.putString("birthdate", birthdate);
+        //bundle.putString("phone", phone);
+        //bundle.putString("email", email);
+        //bundle.putString("interests", interests);
         affichageFragment.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, affichageFragment).commit();
 
