@@ -62,7 +62,6 @@ public class AffichageFragment extends Fragment {
             String password = bundle.getString("password");
 
             User user = databaseHelper.getUser(login, password);
-
             textViewLogin.setText(login);
             textViewPassword.setText(password);
             textViewLastname.setText(user.getLastname());

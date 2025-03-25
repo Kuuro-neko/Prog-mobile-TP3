@@ -50,6 +50,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void insertUser(String login, String password, String lastname, String firstname, String birthdate, String phone, String email, String interests) {
         SQLiteDatabase db = this.getWritableDatabase();
+        if (getUser(login, password) != null) {
+            return;
+        }
         ContentValues values = new ContentValues();
         values.put(COLUMN_LOGIN, login);
         values.put(COLUMN_PASSWORD, password);
