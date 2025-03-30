@@ -5,21 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/main"
-    tools:context=".PlanningActivity">
+    tools:context=".AffichagePlanningActivity">
     <TextView
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:id="@+id/welcome"
-        android:text="">
-    </TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="@string/title_planning">
+        android:text="Affichage Planning">
     </TextView>
     <LinearLayout
         android:layout_height="wrap_content"
@@ -32,11 +24,11 @@
             android:layout_height="wrap_content"
             android:text="@string/label_planning8_10">
         </TextView>
-        <EditText
+        <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/planning8_10">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_height="wrap_content"
@@ -49,11 +41,11 @@
             android:layout_height="wrap_content"
             android:text="@string/label_planning10_12">
         </TextView>
-        <EditText
+        <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/planning10_12">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_height="wrap_content"
@@ -66,11 +58,11 @@
             android:layout_height="wrap_content"
             android:text="@string/label_planning14_16">
         </TextView>
-        <EditText
+        <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/planning14_16">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_height="wrap_content"
@@ -83,25 +75,17 @@
             android:layout_height="wrap_content"
             android:text="@string/label_planning16_18">
         </TextView>
-        <EditText
+        <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/planning16_18">
-        </EditText>
+        </TextView>
     </LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/label_submit"
-        android:id="@+id/submit"
+        android:text="@string/label_return"
+        android:id="@+id/return_button"
         android:layout_gravity="center">
     </Button>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/message"
-        android:text=""
-        android:textAlignment="center"
-        android:layout_gravity="center">
-    </TextView>
 </LinearLayout>

@@ -6,6 +6,7 @@
     <string name="title_inscription">Inscription</string>
     <string name="title_connexion">Connexion</string>
     <string name="title_affichage">Informations</string>
+    <string name="title_planning">Planning</string>
 
     <string name="label_login">Login</string>
     <string name="label_password">Password</string>
@@ -18,5 +19,10 @@
 
     <string name="label_submit">Submit</string>
     <string name="label_return">Return</string>
+
+    <string name="label_planning8_10">08h-10h</string>
+    <string name="label_planning10_12">10h-12h</string>
+    <string name="label_planning14_16">14h-16h</string>
+    <string name="label_planning16_18">16h-18h</string>
 
 </resources>

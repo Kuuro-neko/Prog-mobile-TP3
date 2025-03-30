@@ -140,6 +140,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return -1;
     }
 
+    void updatePlanning(int id, String p8_10, String p10_12, String p14_16, String p16_18) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_PLANNING_8_10, p8_10);
+        values.put(COLUMN_PLANNING_10_12, p10_12);
+        values.put(COLUMN_PLANNING_14_16, p14_16);
+        values.put(COLUMN_PLANNING_16_18, p16_18);
+        db.update(TABLE_NAME, values, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
+        db.close();
+    }
+
     User getUser(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_NAME, new String[]{
