@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link InscriptionFragment#newInstance} factory method to
@@ -27,6 +29,7 @@ public class InscriptionFragment extends Fragment {
     private EditText editTextEmail;
     private EditText editTextInterests;
     private Button submitButton;
+    private TextView errorTextView;
 
     OnInscriptionListener callback;
 
@@ -39,7 +42,8 @@ public class InscriptionFragment extends Fragment {
                 String birthdate,
                 String phone,
                 String email,
-                String interests
+                String interests,
+                TextView errorTextView
         );
     }
 
@@ -67,6 +71,7 @@ public class InscriptionFragment extends Fragment {
         editTextEmail = view.findViewById(R.id.email);
         editTextInterests = view.findViewById(R.id.interests);
         submitButton = view.findViewById(R.id.submit);
+        errorTextView = view.findViewById(R.id.message);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +85,7 @@ public class InscriptionFragment extends Fragment {
                 String email = editTextEmail.getText().toString();
                 String interests = editTextInterests.getText().toString();
 
-                callback.onInscriptionListener(login, password, lastname, firstname, birthdate, phone, email, interests);
+                callback.onInscriptionListener(login, password, lastname, firstname, birthdate, phone, email, interests, errorTextView);
             }
         });
 

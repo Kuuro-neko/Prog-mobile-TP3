@@ -3,18 +3,6 @@ package com.example.prog_mobile_tp3;
 import androidx.annotation.NonNull;
 
 public class User {
-    /*
-    private static final String TABLE_NAME = "users";
-    private static final String COLUMN_ID = "id";
-    private static final String COLUMN_LOGIN = "login";
-    private static final String COLUMN_PASSWORD = "password";
-    private static final String COLUMN_LASTNAME = "lastname";
-    private static final String COLUMN_FIRSTNAME = "firstname";
-    private static final String COLUMN_BIRTHDATE = "birthdate";
-    private static final String COLUMN_PHONE = "phone";
-    private static final String COLUMN_EMAIL = "email";
-    private static final String COLUMN_INTERESTS = "interests";
-     */
     private int id;
     private String login;
     private String password;
@@ -23,6 +11,11 @@ public class User {
     private String birthdate;
     private String phone;
     private String email;
+    private String interests;
+    private String planning_8_10;
+    private String planning_10_12;
+    private String planning_14_16;
+    private String planning_16_18;
 
     public int getId() {
         return id;
@@ -96,9 +89,38 @@ public class User {
         this.interests = interests;
     }
 
-    private String interests;
+    public String getPlanning_8_10() {
+        return planning_8_10;
+    }
 
-    public User(int id, String login, String password, String lastname, String firstname, String birthdate, String phone, String email, String interests) {
+    public void setPlanning_8_10(String planning_8_10) {
+        this.planning_8_10 = planning_8_10;
+    }
+
+    public String getPlanning_10_12() {
+        return planning_10_12;
+    }
+
+    public void setPlanning_10_12(String planning_10_12) {
+        this.planning_10_12 = planning_10_12;
+    }
+
+    public String getPlanning_14_16() {
+        return planning_14_16;
+    }
+
+    public void setPlanning_14_16(String planning_14_16) {
+        this.planning_14_16 = planning_14_16;
+    }
+
+    public String getPlanning_16_18() {
+        return planning_16_18;
+    }
+
+    public void setPlanning_16_18(String planning_16_18) {
+        this.planning_16_18 = planning_16_18;
+    }
+    public User(int id, String login, String password, String lastname, String firstname, String birthdate, String phone, String email, String interests, String planning_8_10, String planning_10_12, String planning_14_16, String planning_16_18) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -108,6 +130,10 @@ public class User {
         this.phone = phone;
         this.email = email;
         this.interests = interests;
+        this.planning_8_10 = planning_8_10;
+        this.planning_10_12 = planning_10_12;
+        this.planning_14_16 = planning_14_16;
+        this.planning_16_18 = planning_16_18;
     }
 
     public User() {}
@@ -125,6 +151,10 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", interests='" + interests + '\'' +
+                ", planning_8_10='" + planning_8_10 + '\'' +
+                ", planning_10_12='" + planning_10_12 + '\'' +
+                ", planning_14_16='" + planning_14_16 + '\'' +
+                ", planning_16_18='" + planning_16_18 + '\'' +
                 '}';
     }
 }

@@ -4,6 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="title_inscription">Inscription</string>
+    <string name="title_connexion">Connexion</string>
     <string name="title_affichage">Informations</string>
 
     <string name="label_login">Login</string>
